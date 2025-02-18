@@ -3,22 +3,21 @@
 
 U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);
 
-Menu menu;
+Menu<String> menu(6);
 
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   
-  menu.addItem("HI");
-  menu.addItem("I'M");
-  menu.addItem("ALIVE");
-
 
   u8g2.begin();
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_ncenB14_tr);
 
+  menu.append("HI");
+  menu.append("I'm");
+  menu.append("ALIVE");
 
   u8g2.drawStr(20, 20, "Hello");
   u8g2.sendBuffer();
@@ -28,14 +27,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  
   delay(500);
   u8g2.clearBuffer();
   
   //char sBuff[128];
   
-  String out = menu.Current();
-  const char* buff = out.c_str();
+  
+  const char* buff = menu.getItem()->data.c_str();
   
 
   int width = u8g2.getStrWidth(buff);
@@ -51,5 +50,5 @@ void loop() {
   */
   u8g2.drawStr(x, y, buff);
   u8g2.sendBuffer();
-  menu.nextItem();
+  menu.next();
 }
