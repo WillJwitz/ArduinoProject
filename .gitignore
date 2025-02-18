@@ -1,0 +1,13 @@
+#Generics
+*.bin
+*.elf
+*.hex
+*.eep
+*.o
+*.d
+*.out
+*.a
+__*
+*.log
+build/
+libraries/
