@@ -2,11 +2,19 @@
 #define MENU_H
 
 #include <Arduino.h>
+#include "LinkedList.h"
 
 class Menu {
+private:
+  LinkedList<String> menu;
+  Node<String>* currItem;
+
 public:
     Menu();  // Constructor
-    void sayHello(); // Function
+    void addItem(const String& item); // Function
+    void nextItem();
+    String Current();
+
 };
 
 #endif
