@@ -1,4 +1,4 @@
-#include <Menu.h>
+#include "Menu.h"
 
 Menu menu;
 
@@ -6,7 +6,7 @@ Menu menu;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  menu.getitem();
+  menu.sayHello();
 }
 
 void loop() {

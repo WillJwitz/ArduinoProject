@@ -2,6 +2,6 @@
 
 Menu::Menu() {}
 
-void Menu::getItem() {
-  Serial.println("Hi from menu\n")
+void Menu::sayHello() {
+    Serial.println("Hello from MyLibrary!");
 }

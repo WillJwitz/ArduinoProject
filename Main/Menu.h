@@ -3,11 +3,10 @@
 
 #include <Arduino.h>
 
-class Menu{
-  public:
-    Menu();  // constructor
-    void getItem();  // func
-
+class Menu {
+public:
+    Menu();  // Constructor
+    void sayHello(); // Function
 };
 
 #endif
