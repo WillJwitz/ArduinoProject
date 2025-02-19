@@ -41,6 +41,14 @@ public:
 
   void next() { index = (index + 1) % numI; }
 
+  void prev() {
+    if((index - 1) >= 0){
+      index = (index - 1) % numI;
+    } 
+  }
+  
   Node<T>* getItem() { return &items[index]; }
+
+
 };
 #endif
